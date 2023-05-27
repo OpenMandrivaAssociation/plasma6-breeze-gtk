@@ -25,6 +25,7 @@ Source0:	http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1
 Patch0:		debug.patch
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Breeze)
+BuildRequires:	cmake(Qt6)
 BuildRequires:	cmake(Qt6Core)
 BuildRequires:	pkgconfig(cairo)
 BuildRequires:	pkgconfig(python3)
