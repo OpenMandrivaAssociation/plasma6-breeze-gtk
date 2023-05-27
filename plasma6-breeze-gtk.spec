@@ -3,7 +3,7 @@
 %define git 20230527
 
 Summary:	The Breeze theme for GTK+ windows
-Name:		breeze-gtk
+Name:		plasma6-breeze-gtk
 Version:	5.240.0
 Release:	%{?git:0.%{git}.}1
 License:	GPL
