@@ -5,7 +5,7 @@
 Summary:	The Breeze theme for GTK+ windows
 Name:		plasma6-breeze-gtk
 Version:	5.240.0
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 License:	GPL
 Group:		Graphical desktop/KDE
 Url:		http://www.kde.org
@@ -32,9 +32,6 @@ BuildRequires:	pkgconfig(python3)
 BuildRequires:	python3dist(pycairo)
 BuildRequires:	gtk2-modules
 BuildRequires:	sassc
-Conflicts:	gnome-breeze < 0.0.2
-Obsoletes:	gnome-breeze < 0.0.2
-Provides:	gnome-breeze = 0.0.2
 Supplements:	gtk+2.0
 Supplements:	gtk2-modules
 
