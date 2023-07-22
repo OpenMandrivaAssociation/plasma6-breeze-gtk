@@ -1,11 +1,11 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 %undefine _debugsource_packages
-%define git 20230715
+%define git 20230722
 
 Summary:	The Breeze theme for GTK+ windows
 Name:		plasma6-breeze-gtk
 Version:	5.240.0
-Release:	%{?git:0.%{git}.}2
+Release:	%{?git:0.%{git}.}1
 License:	GPL
 Group:		Graphical desktop/KDE
 Url:		http://www.kde.org
