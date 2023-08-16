@@ -1,6 +1,6 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 %undefine _debugsource_packages
-%define git 20230812
+%define git 20230816
 
 Summary:	The Breeze theme for GTK+ windows
 Name:		plasma6-breeze-gtk
@@ -34,8 +34,6 @@ BuildRequires:	gtk2-modules
 BuildRequires:	sassc
 #Supplements:	gtk+2.0
 #Supplements:	gtk2-modules
-# Prevent gtk's Recommends: pulling in half of Plasma 5
-Conflicts:	breeze-gtk < 5.240.0-0
 
 %description
 This package contains a version of the KDE Breeze theme for GTK applications
