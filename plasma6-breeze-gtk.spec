@@ -1,10 +1,10 @@
-%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
+%define stable %([ "$(echo %{version} |cut -d. -f2)" -ge 80 -o "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
 %undefine _debugsource_packages
-%define git 20231103
+#define git 20231103
 
 Summary:	The Breeze theme for GTK+ windows
 Name:		plasma6-breeze-gtk
-Version:	5.240.0
+Version:	5.27.80
 Release:	%{?git:0.%{git}.}1
 License:	GPL
 Group:		Graphical desktop/KDE
@@ -12,7 +12,7 @@ Url:		http://www.kde.org
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/breeze-gtk/-/archive/master/breeze-gtk-master.tar.bz2#/breeze-gtk-%{git}.tar.bz2
 %else
-Source0:	http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{name}-%{version}.tar.xz
+Source0:	http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/breeze-gtk-%{version}.tar.xz
 %endif
 # FIXME this is a really weird issue: On aarch64, the
 # build fails with a crash in pycairo, but as soon as
