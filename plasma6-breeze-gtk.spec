@@ -6,7 +6,7 @@
 
 Summary:	The Breeze theme for GTK+ windows
 Name:		plasma6-breeze-gtk
-Version:	6.0.1
+Version:	6.0.1.1
 Release:	%{?git:0.%{git}.}1
 License:	GPL
 Group:		Graphical desktop/KDE
@@ -25,7 +25,6 @@ Source0:	http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1
 # if the problem returns, at least we'll get some
 # information about it.
 Patch0:		debug.patch
-Patch1:		allow-ecm-6.0.0.patch
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Breeze)
 BuildRequires:	cmake(Qt6)
