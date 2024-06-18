@@ -6,7 +6,7 @@
 
 Summary:	The Breeze theme for GTK+ windows
 Name:		plasma6-breeze-gtk
-Version:	6.0.5
+Version:	6.1.0
 Release:	%{?git:0.%{git}.}1
 License:	GPL
 Group:		Graphical desktop/KDE
