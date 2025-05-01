@@ -5,9 +5,9 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Summary:	The Breeze theme for GTK+ windows
-Name:		plasma6-breeze-gtk
+Name:		breeze-gtk
 Version:	6.3.4
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 License:	GPL
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org
@@ -36,6 +36,11 @@ BuildRequires:	gtk2-modules
 BuildRequires:	sassc
 #Supplements:	gtk+2.0
 #Supplements:	gtk2-modules
+BuildSystem:	cmake
+BuildOption:	-DBUILD_QCH:BOOL=ON
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+# Renamed 2025-05-01 after 6.0
+%rename plasma6-breeze-gtk
 
 %description
 This package contains a version of the KDE Breeze theme for GTK applications
@@ -44,19 +49,3 @@ and environments, such as GNOME.
 %files
 %{_datadir}/themes/Breeze
 %{_datadir}/themes/Breeze-Dark
-
-#-----------------------------------------------------------------------------
-
-%prep
-%autosetup -p1 -n breeze-gtk-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DBUILD_QCH:BOOL=ON \
-	-DBUILD_WITH_QT6:BOOL=ON \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
